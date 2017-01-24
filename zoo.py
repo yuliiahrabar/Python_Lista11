@@ -31,5 +31,7 @@ ryba = create_Fish("Ryba", 1,10,10,2,"sea water")
 biedronka = create_Insect("Biedronka", 0.3, 0.1, 0.1, "tak", 2)
 parus = create_Bird("Parus", 1, 1, 1, 1, 1)
 
-
+for obj in gc.get_objects():
+    if isinstance(obj, animal.Animal):
+        print(obj)
 
