@@ -2,9 +2,9 @@ import animal
 
 class Bird(animal.Animal):
 
+    def __init__(self, name, age, height, weight, type_of_wings, type_of_beak):
 
-    def __init__(self, age, height, weight, type_of_wings, type_of_beak):
-
+        super().__init__(name, age, height, weight)
         self.__type_of_wings = type_of_wings # rodzaj skrzydeł
         self.__type_of_beak = type_of_beak # rodzaj dzióbu
 
@@ -20,3 +20,4 @@ class Bird(animal.Animal):
 
     def get_type_of_beak(self):
         return self.__type_of_beak
+
