@@ -2,9 +2,9 @@ import animal
 
 class Fish(animal.Animal):
 
+    def __init__(self, name, age, height, weight, type_of_fins, type_of_water):
 
-    def __init__(self, age, height, weight, type_of_fins, type_of_water):
-
+        super().__init__(name, age, height, weight)
         self.__type_of_fins = type_of_fins # rodzaj płetw
         self.__type_of_water = type_of_water # rodzaj wody
 
@@ -20,3 +20,4 @@ class Fish(animal.Animal):
 
     def get_type_of_water(self):
         return self.__type_of_water
+
