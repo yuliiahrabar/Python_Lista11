@@ -1,11 +1,15 @@
 class Animal:
 
-    def __init__(self, age, height, weight):
+    def __init__(self, name, age, height, weight):
         """Inicjuje zwierzę"""
 
+        self.__name = name
         self.__age = age
         self.__height = height
         self.__weight = weight
+
+    def get_name(self):
+        return self.__name
 
     def get_age(self):
         return self.__age
@@ -24,3 +28,7 @@ class Animal:
 
     def set_weight(self, x):
         self.__weight = x
+
+    def __str__(self):
+        return "{}: age = {}, height = {}, weight = {}".format(self.__name, self.__age, self.__height, self.__weight)
+
