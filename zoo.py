@@ -24,6 +24,20 @@ def delete_object(obj):
     """Usuwa  obiekt"""
     del obj
 
+def show_zoo():
+    """Drukuje na ekranie zawartosc zoo"""
+    for obj in gc.get_objects():
+        if isinstance(obj, animal.Animal):
+            print(obj)
+
+def to_file(name):
+    file = open(name, "w+")  # zapis z możliwością odczytu
+    for obj in gc.get_objects():
+        if isinstance(obj, animal.Animal):
+            line = obj.__str__() + "\n"
+            file.write(line)
+    file.close()
+
 
 kotek = create_Animal("Kotek", 5,10,15)
 pies = create_Animal("Pies", 2,10,15)
@@ -31,7 +45,11 @@ ryba = create_Fish("Ryba", 1,10,10,2,"sea water")
 biedronka = create_Insect("Biedronka", 0.3, 0.1, 0.1, "tak", 2)
 parus = create_Bird("Parus", 1, 1, 1, 1, 1)
 
-for obj in gc.get_objects():
-    if isinstance(obj, animal.Animal):
-        print(obj)
+to_file("zoo.txt")
+
+
+
+
+
+
 
