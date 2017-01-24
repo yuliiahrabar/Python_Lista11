@@ -1,13 +1,13 @@
 import animal
 
+
 class Insect(animal.Animal):
 
+    def __init__(self, name, age, height, weight, wings, stage):
 
-    def __init__(self, age, height, weight, wings, stage):
-
-        self.__wings = wings # czy ma skrzydła
-        self.__stage = stage # typ rozwoju
-
+        super().__init__(name, age, height, weight)
+        self.__wings = wings  # czy ma skrzydła
+        self.__stage = stage  # typ rozwoju
 
     def set_wings(self, x):
         self.__wings = x
@@ -20,3 +20,4 @@ class Insect(animal.Animal):
 
     def get_stage(self):
         return self.__stage
+
